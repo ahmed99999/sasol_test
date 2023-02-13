@@ -3,16 +3,25 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Product
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, ProductsSerializer
 from rest_framework import filters, status
 from rest_framework import generics
 
 
-class ProductList(generics.ListAPIView):
+class ProductList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
-    serializer_class = ProductSerializer
+    serializer_class = ProductsSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['name']
+
+    def get_queryset(self):
+        return Product.objects.all()
+
+    def perform_create(self, serializer):
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProductDetail(APIView):
