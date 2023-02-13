@@ -2,6 +2,12 @@ from rest_framework import serializers
 from .models import Product
 
 
+class ProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ['name', 'picture', 'price', 'active']
+
+
 class ProductSerializer(serializers.ModelSerializer):
     temp_price = serializers.SerializerMethodField()
 
@@ -10,6 +16,5 @@ class ProductSerializer(serializers.ModelSerializer):
         return instance.getTempPrice()
 
     class Meta:
-        db_table = 'products'
         model = Product
         fields = '__all__'
