@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="products" element={<ProductsPage />} />
-        <Route path="product/:productId" element={<ProductDetail />} />
+        <Route path="products/:productId" element={<ProductDetail />} />
         <Route path="*" element={<Navigate to="/products" replace />} />
       </Routes>
     </div>

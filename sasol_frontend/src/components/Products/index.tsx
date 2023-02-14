@@ -22,7 +22,7 @@ const Products = ({ searchValue = "" }: Props) => {
   }
 
   if (isError) {
-    return <div>Error Loading Products...</div>;
+    return <div>Error Loading Products, please try again later</div>;
   }
 
   if (!products || !products.length) {
