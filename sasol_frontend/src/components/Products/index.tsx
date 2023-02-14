@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useProducts } from "../../hooks/useProducts";
 
+import Product from "../Product";
+
 interface Props {
   searchValue: string;
 }
@@ -32,7 +34,7 @@ const Products = ({ searchValue = "" }: Props) => {
   return (
     <div>
       {products.map((product) => (
-        <div key={product.id}>{product.name}</div>
+        <Product key={product.id} product={product} />
       ))}
     </div>
   );
