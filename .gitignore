@@ -1,1 +1,6 @@
 .idea
+sasol_backend/sasol_api/__pycache__/
+sasol_backend/sasol_api/migrations/__pycache__/
+sasol_backend/sasol_backend/__pycache__/
+
+sasol_frontend/node_modules/
