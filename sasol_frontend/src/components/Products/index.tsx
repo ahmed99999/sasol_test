@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useProducts } from "../../hooks/useProducts";
 
 interface Props {
@@ -8,6 +8,14 @@ interface Props {
 const Products = ({ searchValue = "" }: Props) => {
   const productsResult = useProducts(searchValue);
   const { isError, isLoading, data: products } = productsResult;
+
+  useEffect(() => {
+    productsResult
+      .refetch()
+      .then(() => console.log(`getting new search data for ${searchValue}`));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchValue]);
 
   if (isLoading) {
     return <div>Loading Products...</div>;
