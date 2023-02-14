@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useProduct } from "../hooks/useProduct";
+import { useProduct } from "../../hooks/useProduct";
 
-const ProductDetail = () => {
+const ProductDetailPage = () => {
   const { productId = "" } = useParams();
   const { isError, isLoading, data: product } = useProduct(parseInt(productId));
 
@@ -28,4 +28,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ProductDetailPage;
