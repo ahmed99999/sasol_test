@@ -5,7 +5,7 @@ interface Props {
   onChange?: (searchValue: string) => void;
 }
 
-const SearchbarInput = ({ onChange = () => null }: Props) => {
+const SearchBarInput = ({ onChange = () => null }: Props) => {
   const [searchInput, setSearchInput] = useState<string>("");
   const debouncedSearchInput = useDebounce<string>(searchInput, 500);
 
@@ -31,4 +31,4 @@ const SearchbarInput = ({ onChange = () => null }: Props) => {
   );
 };
 
-export default SearchbarInput;
+export default SearchBarInput;

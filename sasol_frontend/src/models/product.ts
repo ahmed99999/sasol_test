@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductModel {
   id: number;
   active: boolean;
   price: string;

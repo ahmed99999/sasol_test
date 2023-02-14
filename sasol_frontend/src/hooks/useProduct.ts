@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 import { fetchProduct } from "../services";
-import { Product } from "../models";
+import { ProductModel } from "../models";
 
-const onSuccess = (product: Product) => {
+const onSuccess = (product: ProductModel) => {
   console.log(`Successfully fetched product ${product.name}`);
 };
 

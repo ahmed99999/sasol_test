@@ -1,11 +1,11 @@
 import request from "../lib/request";
-import { Product } from "../models";
+import { ProductModel } from "../models";
 
 const fetchProduct = async (
   productId: number
-): Promise<Product | undefined> => {
+): Promise<ProductModel | undefined> => {
   try {
-    const response = await request.get<Product>(`/products/${productId}`);
+    const response = await request.get<ProductModel>(`/products/${productId}`);
 
     return response.data;
   } catch (e) {

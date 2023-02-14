@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Products from "../components/Products";
-import SearchbarInput from "../components/SearchBar";
+import SearchBarInput from "../components/SearchBar";
 
 const ProductsPage = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   return (
     <div>
-      <SearchbarInput onChange={setSearchValue} />
+      <SearchBarInput onChange={setSearchValue} />
       <Products searchValue={searchValue} />
     </div>
   );
