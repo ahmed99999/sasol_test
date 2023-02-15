@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "../../hooks/useDebounce";
+import styles from "./index.module.scss";
 
 interface Props {
   onChange?: (searchValue: string) => void;
@@ -20,10 +21,10 @@ const SearchBarInput = ({ onChange = () => null }: Props) => {
   }, [debouncedSearchInput]);
 
   return (
-    <div className="searchBar">
+    <div className={styles.root}>
       <input
         type="text"
-        className="searchBarInput"
+        className={styles.searchBarInput}
         onChange={handleChangeSearchInput}
         placeholder="Search for Products..."
       />

@@ -1,13 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useProduct } from "../../hooks/useProduct";
+import Loading from "../../components/Loading";
 
 const ProductDetailPage = () => {
   const { productId = "" } = useParams();
   const { isError, isLoading, data: product } = useProduct(parseInt(productId));
 
   if (isLoading) {
-    return <div>Loading Product...</div>;
+    return <Loading text={"Loading Product..."} />;
   }
 
   if (isError) {
