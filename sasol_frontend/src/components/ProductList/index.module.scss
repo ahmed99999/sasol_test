@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 3rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 50%;
+  align-items: stretch;
+}
