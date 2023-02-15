@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useProducts } from "../../hooks/useProducts";
+import styles from "./index.module.scss";
 
 import Product from "../Product";
+import Loading from "../Loading";
 
 interface Props {
   searchValue: string;
 }
 
-const Products = ({ searchValue = "" }: Props) => {
+const ProductList = ({ searchValue = "" }: Props) => {
   const productsResult = useProducts(searchValue);
   const { isError, isLoading, data: products } = productsResult;
 
@@ -20,7 +22,7 @@ const Products = ({ searchValue = "" }: Props) => {
   }, [searchValue]);
 
   if (isLoading) {
-    return <div>Loading Products...</div>;
+    return <Loading text={"Loading Products..."} />;
   }
 
   if (isError) {
@@ -32,7 +34,7 @@ const Products = ({ searchValue = "" }: Props) => {
   }
 
   return (
-    <div>
+    <div className={styles.root}>
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
@@ -40,4 +42,4 @@ const Products = ({ searchValue = "" }: Props) => {
   );
 };
 
-export default Products;
+export default ProductList;
