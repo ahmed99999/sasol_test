@@ -1,8 +1,28 @@
 version: "3.8"
 services:
+#  db:
+#    container_name: db
+#    image: postgres:13-alpine
+#    volumes:
+#      - ./data/db:/var/lib/postgresql/data
+#    ports:
+#      - '5432:5432'
+#    environment:
+#      - POSTGRES_DB=postgres
+#      - POSTGRES_USER=ahmed
+#      - POSTGRES_PASSWORD=ahmed
+#  sasol_backend:
+#    container_name: sasol_backend_c
+#    image: django-docker:0.0.1
+#    build: ./sasol_backend
+#    ports:
+#      - '8000:8000'
+#    depends_on:
+#      - db
   sasol_frontend:
-    build: ./sasol_frontend
     container_name: sasol_frontend_c
+    restart: always
+    build: ./sasol_frontend
     ports:
       - '3000:3000'
     stdin_open: true
