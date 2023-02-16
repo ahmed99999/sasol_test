@@ -4,7 +4,11 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install --global yarn && yarn install
+COPY yarn.lock .
+
+RUN npm install yarn
+
+RUN yarn install
 
 COPY . .
 
