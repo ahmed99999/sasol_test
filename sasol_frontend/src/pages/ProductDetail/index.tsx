@@ -70,8 +70,8 @@ const ProductDetailPage = () => {
         <div className={styles.tags}>
           <span>Tags:</span>
           <ul>
-            {product.tags?.map((tag) => (
-              <li key={tag}>{tag}</li>
+            {product.tags?.map((tag, index) => (
+              <li key={tag + index}>{tag}</li>
             ))}
           </ul>
         </div>
