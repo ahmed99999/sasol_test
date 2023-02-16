@@ -1,0 +1,52 @@
+.root {
+  display: flex;
+  margin: 4rem;
+  gap: 3rem;
+}
+
+.image {
+  border-radius: 4px;
+  width: 450px;
+  height: 450px;
+}
+
+.hide {
+  text-decoration: line-through;
+}
+
+.textLink {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info  {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tags {
+
+}
+
+.inStock {
+  width: 6rem;
+  background-color: aquamarine;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.outOfStock {
+  width: 6rem;
+  background-color: #f55742;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
