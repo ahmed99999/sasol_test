@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  sasol_frontend:
+    build: ./sasol_frontend
+    container_name: sasol_frontend_c
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
